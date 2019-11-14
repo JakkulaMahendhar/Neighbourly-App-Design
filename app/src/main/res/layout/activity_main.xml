@@ -4,14 +4,80 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:background="#FF3F51B5">
+
+ <android.support.v7.widget.Toolbar
+     android:id="@+id/toolbar"
+     android:layout_width="match_parent"
+     android:layout_height="?attr/actionBarSize">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="10dp"
+      >
+
+   <de.hdodenhof.circleimageview.CircleImageView
+       android:id="@+id/iv_dp"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:layout_below="@+id/btn_menu_opts"
+       android:scaleType="centerCrop"
+       android:layout_centerVertical="true"
+       android:src="@drawable/ic_launcher_background"
+       />
+
+   <ImageView
+        android:id="@+id/locate"
+       android:layout_toEndOf="@id/iv_dp"
+       android:layout_width="35dp"
+       android:layout_height="35dp"
+       android:layout_marginLeft="18dp"
+       android:background="@drawable/circle"
+       android:padding="5dp"
+       android:layout_centerVertical="true"
+       android:src="@drawable/ic_location_on_black_24dp"
+    />
+   <ImageView
+       android:layout_width="35dp"
+       android:layout_height="35dp"
+       android:layout_toEndOf="@id/locate"
+      android:layout_marginLeft="15dp"
+       android:padding="5dp"
+       android:background="@drawable/circle"
+       android:layout_centerVertical="true"
+       android:src="@drawable/ic_search_black_24dp"
+       />
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="POST"
+       android:textSize="18sp"
+       android:textColor="#ffffff"
+       android:gravity="center"
+       android:padding="10dp"
+       android:drawablePadding="11dp"
+       android:layout_centerVertical="true"
+       android:drawableLeft="@drawable/ic_add_box_black_24dp"
+       android:background="@drawable/rect"
+       android:layout_alignParentEnd="true"
+       android:layout_marginRight="15dp"/>
+  </RelativeLayout>
+
+ </android.support.v7.widget.Toolbar>
 
  <android.support.v7.widget.RecyclerView
      android:id="@+id/recyclerview"
      android:layout_width="match_parent"
-     android:layout_height="wrap_content">
+     android:layout_height="wrap_content"
+     android:layout_below="@id/toolbar"
+     android:nestedScrollingEnabled="false"
+     android:layout_marginTop="5dp">
 
  </android.support.v7.widget.RecyclerView>
+
+<!-- <include layout="@layout/layout_viewholder1"/>-->
+<!-- <include layout="@layout/layout_viewholder2"/>-->
 
 
 

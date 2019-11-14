@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="16dp"
     app:cardMaxElevation="8dp"
-    app:contentPadding="8dp">
+    android:layout_margin="11dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,6 +26,7 @@
             android:layout_below="@+id/image"
             android:layout_marginTop="15dp"
             android:scaleType="centerCrop"
+            android:layout_marginLeft="5dp"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
@@ -37,7 +38,7 @@
             android:layout_marginTop="15dp"
             android:layout_toEndOf="@+id/iv_questnr_dp"
             android:textSize="14sp"
-            tools:text="Pavan Kumar . 2 Days Ago" />
+            android:text="Pavan Kumar . 2 Days Ago" />
 
         <TextView
             android:id="@+id/tv_location"
@@ -48,7 +49,7 @@
             android:layout_toEndOf="@+id/iv_questnr_dp"
             android:drawableStart="@drawable/ic_location_on_black_24dp"
             android:textSize="12sp"
-            tools:text="Hyderabad" />
+           android:text="Hyderabad" />
 
 
         <TextView
@@ -58,6 +59,7 @@
             android:layout_below="@id/tv_location"
             android:layout_toEndOf="@id/iv_questnr_dp"
             android:padding="10dp"
+            android:textSize="18sp"
             android:text="Shine and shimmer" />
 
         <TextView
@@ -68,7 +70,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="5dp"
-            tools:text="3 Answers" />
+            android:text="3 Answers" />
 
         <View
             android:id="@+id/vw_seperator"
@@ -76,6 +78,7 @@
             android:layout_height="1dp"
             android:layout_below="@+id/tv_no.of_ans"
             android:layout_marginTop="6dp"
+           android:layout_margin="8dp"
             android:layout_marginBottom="12dp"
             android:background="#25000000" />
 
@@ -88,6 +91,7 @@
             android:background="@android:color/transparent"
             android:drawableStart="@drawable/ic_star_black_24dp"
             android:gravity="center"
+            android:padding="8dp"
             android:drawablePadding="5dp"
             android:text="Save" />
 
@@ -101,6 +105,7 @@
             android:drawableStart="@drawable/ic_thumb_up_black_24dp"
             android:gravity="center"
             android:drawablePadding="5dp"
+            android:padding="8dp"
             android:text="Like" />
 
         <TextView
@@ -113,6 +118,7 @@
             android:background="@android:color/transparent"
             android:drawableStart="@drawable/ic_message_black_24dp"
             android:gravity="center"
+            android:padding="8dp"
             android:drawablePadding="5dp"
             android:text="Answer" />
 

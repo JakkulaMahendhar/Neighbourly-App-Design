@@ -11,8 +11,8 @@ public class Viewholder1 extends RecyclerView.ViewHolder {
 
     public Viewholder1(@NonNull View itemView) {
         super(itemView);
-        label1 = (TextView) itemView.findViewById(R.id.textone);
-        label2 = (TextView) itemView.findViewById(R.id.texttwo);
+        label1 = (TextView) itemView.findViewById(R.id.tv_name);
+        label2 = (TextView) itemView.findViewById(R.id.tv_location);
     }
 
     public TextView getLabel1() {

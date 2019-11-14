@@ -11,7 +11,7 @@ public class Viewholder2 extends RecyclerView.ViewHolder {
 
     public Viewholder2(@NonNull View itemView) {
         super(itemView);
-        ivExample = (ImageView) itemView.findViewById(R.id.ivExample);
+        ivExample = (ImageView) itemView.findViewById(R.id.image);
     }
 
     public ImageView getImageView() {
