@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardMaxElevation="8dp"
+    app:contentPadding="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_questnr_dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/image"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/iv_questnr_dp"
+            android:textSize="14sp"
+            tools:text="Pavan Kumar . 2 Days Ago" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/iv_questnr_dp"
+            android:drawableStart="@drawable/ic_location_on_black_24dp"
+            android:textSize="12sp"
+            tools:text="Hyderabad" />
+
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_location"
+            android:layout_toEndOf="@id/iv_questnr_dp"
+            android:padding="10dp"
+            android:text="Shine and shimmer" />
+
+        <TextView
+            android:id="@+id/tv_no.of_ans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desc"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="5dp"
+            tools:text="3 Answers" />
+
+        <View
+            android:id="@+id/vw_seperator"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_no.of_ans"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="12dp"
+            android:background="#25000000" />
+
+        <TextView
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vw_seperator"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_star_black_24dp"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:text="Save" />
+
+        <TextView
+            android:id="@+id/btn_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vw_seperator"
+            android:layout_centerInParent="true"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_thumb_up_black_24dp"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:text="Like" />
+
+        <TextView
+            android:id="@+id/btn_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vw_seperator"
+            android:layout_alignEnd="@+id/vw_seperator"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_message_black_24dp"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:text="Answer" />
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
