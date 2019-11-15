@@ -1,6 +1,7 @@
 package com.example.fincare_uat;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,7 +10,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerview;
     ImageView locate;
     Dialog dialog;
-
+    TextView btn_post;
+    boolean frsttineclick = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,11 +31,18 @@ public class MainActivity extends AppCompatActivity {
         dialog = new Dialog(this);
         recyclerview = (RecyclerView) findViewById(R.id.recyclerview);
         locate = (ImageView) findViewById(R.id.locate);
-
-        RecyclerviewAdapter adapter = new RecyclerviewAdapter(getSampleArrayList());
+        btn_post = (TextView) findViewById(R.id.btn_post);
+        RecyclerviewAdapter adapter = new RecyclerviewAdapter(getSampleArrayList(),this);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setAdapter(adapter);
-
+        btn_post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,PostActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_up, 0);
+            }
+        });
         locate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showPopup() {
+
         Window window = dialog.getWindow();
         WindowManager.LayoutParams wlp = window.getAttributes();
         wlp.gravity = Gravity.TOP;
@@ -50,7 +62,13 @@ public class MainActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.locate_popup);
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);
-        dialog.show();
+        if(frsttineclick){
+            dialog.show();
+        }else{
+            frsttineclick = true;
+            showPopup();
+        }
+
 
     }
 

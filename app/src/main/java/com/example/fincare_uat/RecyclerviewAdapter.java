@@ -1,5 +1,7 @@
 package com.example.fincare_uat;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,10 +17,13 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private final int USER = 0, IMAGE = 1;
 
+    Context ctx;
+
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RecyclerviewAdapter(List<Object> items) {
+    public RecyclerviewAdapter(List<Object> items,Context ctx) {
         try {
             this.items = items;
+            this.ctx = ctx;
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -57,15 +62,29 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 case USER:
                     Viewholder1 vh1 = (Viewholder1) viewHolder;
                     configureViewHolder1(vh1, i);
+                    vh1.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                                Intent i = new Intent(ctx,RecylerItemViewActivity.class);
+                                i.putExtra("user","user");
+                                ctx.startActivity(i);
+                        }
+                    });
                     break;
                 case IMAGE:
                     Viewholder2 vh2 = (Viewholder2) viewHolder;
                     configureViewHolder2(vh2);
+                    vh2.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent i = new Intent(ctx,RecylerItemViewActivity.class);
+                            i.putExtra("image","image");
+                            ctx.startActivity(i);
+                        }
+                    });
                     break;
-//            default:
-//                RecyclerViewSimpleTextViewHolder vh = (RecyclerViewSimpleTextViewHolder) viewHolder;
-//                configureDefaultViewHolder(vh, position);
-//                break;
+
+
             }
         } catch (Exception e) {
             e.printStackTrace();
