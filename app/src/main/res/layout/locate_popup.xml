@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="#FF3F51B5">
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change neighborhood"
+        android:layout_marginLeft="5dp"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/tv_location1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/iv_questnr_dp"
+        android:drawableStart="@drawable/ic_location_on_black_24dp"
+        android:textSize="15sp"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="10dp"
+        android:text="Hyderabad"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/tv_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:drawableEnd="@drawable/ic_delete_black_24dp"
+        android:textSize="15sp"
+        android:drawablePadding="5dp"
+        android:layout_marginTop="10dp"
+        android:text="Remove"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/tv_location2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_location1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/iv_questnr_dp"
+        android:drawableStart="@drawable/ic_location_on_black_24dp"
+        android:textSize="15sp"
+        android:drawablePadding="8dp"
+        android:text="Delhi"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/tv_location3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_location2"
+        android:layout_marginLeft="5dp"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/iv_questnr_dp"
+        android:drawableStart="@drawable/ic_add_box_black_24dp"
+        android:textSize="15sp"
+        android:text="Add neighborhood"
+         android:textColor="#ffffff"/>
+
+</RelativeLayout>
