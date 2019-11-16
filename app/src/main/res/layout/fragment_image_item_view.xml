@@ -514,9 +514,9 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_weight="0.7"
-                android:background="@drawable/buttton_backgroung"
+                android:background="@drawable/button_background"
                 android:layout_alignParentBottom="true">
 
                 <LinearLayout
@@ -525,10 +525,11 @@
                     android:orientation="horizontal">
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/circluar_image"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_gravity="center"
-                        android:layout_weight="1"
+                        android:layout_weight="0.4"
                         android:src="@drawable/ic_launcher_background"
                         android:visibility="gone" />
 
@@ -538,6 +539,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="2"
+                        android:layout_marginLeft="10dp"
                         android:background="@android:color/transparent"
                         android:hint="Comment"
                         android:textColorHint="#ffffff"
@@ -548,7 +550,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="0.5"
+                        android:layout_weight="0.4"
                         android:src="@drawable/ic_mic_black_24dp"
                         android:visibility="gone" />
 
@@ -557,7 +559,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_weight="0.5"
+                        android:layout_marginRight="8dp"
                         android:src="@drawable/ic_send_black_24dp"
                         android:visibility="gone" />
 
@@ -569,6 +571,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="Answer"
+                        android:visibility="visible"
                         android:textColor="#ffffff"
                         android:textSize="21sp" />
 

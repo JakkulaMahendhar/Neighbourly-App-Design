@@ -74,6 +74,7 @@
      android:layout_height="wrap_content"
      android:layout_gravity="center"
      android:layout_marginTop="1dp"
+     android:visibility="gone"
      android:orientation="vertical"
      shimmer:duration="800">
 
