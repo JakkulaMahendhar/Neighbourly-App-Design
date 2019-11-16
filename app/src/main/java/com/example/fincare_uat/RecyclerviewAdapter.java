@@ -2,11 +2,14 @@ package com.example.fincare_uat;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;
 
@@ -19,11 +22,14 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     Context ctx;
 
+    ShimmerFrameLayout mShimmerViewContainer;
+
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RecyclerviewAdapter(List<Object> items,Context ctx) {
+    public RecyclerviewAdapter(List<Object> items, Context ctx, ShimmerFrameLayout shimmerFrameLayout) {
         try {
             this.items = items;
             this.ctx = ctx;
+            this.mShimmerViewContainer = shimmerFrameLayout;
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -114,7 +120,17 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-    private void configureViewHolder2(Viewholder2 vh2) {
-        vh2.getImageView().setImageResource(R.drawable.background);
+    private void configureViewHolder2(final Viewholder2 vh2) {
+        mShimmerViewContainer.startShimmerAnimation();
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                vh2.getImageView().setImageResource(R.drawable.ic_launcher_background);
+                mShimmerViewContainer.stopShimmerAnimation();
+                mShimmerViewContainer.setVisibility(View.GONE);
+            }
+        }, 2000);
+
     }
 }

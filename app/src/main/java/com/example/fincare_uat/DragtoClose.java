@@ -8,6 +8,7 @@ import android.support.annotation.IdRes;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -372,21 +373,26 @@ public class DragtoClose extends FrameLayout {
     }
 
     public final void closeActivity() {
-        DragListener var10000 = this.listener;
-        if (var10000 != null) {
-            var10000.onViewCosed();
-        }
+        try {
+            DragListener var10000 = this.listener;
+            if (var10000 != null) {
+                var10000.onViewCosed();
+            }
 
-        if (this.finishActivity) {
-            Context var2 = this.getContext();
-//            if (var2 == null) {
-//                throw new TypeCastException("null cannot be cast to non-null type android.app.Activity");
-//            }
+            if (this.finishActivity) {
+                Context var2 = this.getContext();
+            if (var2 == null) {
+                throw new ClassCastException("null cannot be cast to non-null type android.app.Activity");
+            }
 
-            Activity activity = (Activity)var2;
-            activity.finish();
-            activity.overridePendingTransition(0, -7);
+                Activity activity = (Activity) var2;
+                activity.finish();
+                //activity.overridePendingTransition(0, -7);
 
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            Log.d("only debug mode " ,e.getMessage());
         }
 
     }

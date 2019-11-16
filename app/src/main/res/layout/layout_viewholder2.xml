@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/background" />
+            android:src="@drawable/ic_launcher_background" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_questnr_dp"

@@ -2,6 +2,7 @@ package com.example.fincare_uat;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,6 +15,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,21 +27,34 @@ public class MainActivity extends AppCompatActivity {
     Dialog dialog;
     TextView btn_post;
     boolean frsttineclick = false;
+    private ShimmerFrameLayout mShimmerViewContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mShimmerViewContainer = findViewById(R.id.shimmer_view_container);
+
         dialog = new Dialog(this);
         recyclerview = (RecyclerView) findViewById(R.id.recyclerview);
         locate = (ImageView) findViewById(R.id.locate);
         btn_post = (TextView) findViewById(R.id.btn_post);
-        RecyclerviewAdapter adapter = new RecyclerviewAdapter(getSampleArrayList(),this);
+        final RecyclerviewAdapter adapter = new RecyclerviewAdapter(getSampleArrayList(), this,mShimmerViewContainer);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setAdapter(adapter);
+//        final Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                recyclerview.setAdapter(adapter);
+//                mShimmerViewContainer.stopShimmerAnimation();
+//                mShimmerViewContainer.setVisibility(View.GONE);
+//            }
+//        }, 2000);
         btn_post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,PostActivity.class);
+                Intent intent = new Intent(MainActivity.this, PostActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_up, 0);
             }
@@ -62,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.locate_popup);
         dialog.setCancelable(true);
         dialog.setCanceledOnTouchOutside(true);
-        if(frsttineclick){
+        if (frsttineclick) {
             dialog.show();
-        }else{
+        } else {
             frsttineclick = true;
             showPopup();
         }

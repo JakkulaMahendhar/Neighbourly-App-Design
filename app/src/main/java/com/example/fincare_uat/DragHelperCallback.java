@@ -1,6 +1,7 @@
 package com.example.fincare_uat;
 
 import android.support.v4.widget.ViewDragHelper.Callback;
+import android.util.Log;
 import android.view.View;
 
 public class DragHelperCallback extends Callback{
@@ -13,16 +14,21 @@ public class DragHelperCallback extends Callback{
 
 
     public void onViewDragStateChanged(int state) {
-        if (state != this.lastDraggingState) {
-            if ((this.lastDraggingState == 1 || this.lastDraggingState == 2) && state == 0 && this.topBorderDraggableContainer == this.dragToClose.getDraggableRange()) {
-                this.dragToClose.closeActivity();
-            }
+        try {
+            if (state != this.lastDraggingState) {
+                if ((this.lastDraggingState == 1 || this.lastDraggingState == 2) && state == 0 && this.topBorderDraggableContainer == this.dragToClose.getDraggableRange()) {
+                    this.dragToClose.closeActivity();
+                }
 
-            if (state == 1) {
-                this.dragToClose.onStartDraggingView();
-            }
+                if (state == 1) {
+                    this.dragToClose.onStartDraggingView();
+                }
 
-            this.lastDraggingState = state;
+                this.lastDraggingState = state;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            Log.d("release mode : " ,e.getMessage());
         }
     }
 
