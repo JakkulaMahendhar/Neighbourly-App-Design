@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.fincare_uat.DragtoClose xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.neighbourly.DragtoClose xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:drag="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drag_to_close"
     android:layout_width="match_parent"
@@ -684,4 +684,4 @@
         </LinearLayout>
     </RelativeLayout>
     </LinearLayout>
-</com.example.fincare_uat.DragtoClose>
+</com.example.neighbourly.DragtoClose>

@@ -1,4 +1,4 @@
-package com.example.fincare_uat;
+package com.example.neighbourly;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.fincare_uat", appContext.getPackageName());
+        assertEquals("com.example.neighbourly", appContext.getPackageName());
     }
 }

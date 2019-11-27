@@ -1,4 +1,4 @@
-package com.example.fincare_uat;
+package com.example.neighbourly;
 
 import android.support.v4.widget.ViewDragHelper.Callback;
 import android.util.Log;

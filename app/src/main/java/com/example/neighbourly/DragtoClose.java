@@ -1,4 +1,4 @@
-package com.example.fincare_uat;
+package com.example.neighbourly;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
